@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../Class_practice"
+		},
+		{
+			"name": "phpproject",
+			"path": "../../phpproject"
+		},
+		{
+			"name": "hotel",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

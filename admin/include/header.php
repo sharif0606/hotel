@@ -4,7 +4,8 @@
     echo "<script>window.location='login.php'</script>";
     exit;
   }
-  $base_url="https://".$_SERVER['SERVER_NAME']."/".explode('/',$_SERVER['SCRIPT_NAME'])[1]."/admin/";
+    $protocol = isset($_SERVER['HTTPS']) ? 'https' : 'http';
+  $base_url="$protocol://".$_SERVER['SERVER_NAME']."/".explode('/',$_SERVER['SCRIPT_NAME'])[1]."/admin/";
     require_once('../class/crud.php');
     $mysqli=new crud;
 ?>

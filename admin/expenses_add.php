@@ -53,8 +53,6 @@
 
 <?php
 		if($_POST){
-			
-			$_POST['head_type']=1;
 			$rs=$mysqli->common_create('tbl_journal',$_POST);
 			if(!$rs['error']){
 				echo "<script>window.location='expenses_list.php'</script>";

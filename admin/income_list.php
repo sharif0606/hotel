@@ -21,6 +21,39 @@ $totalSum = 0;
         <div class="col-sm-12">
             <div class="card card-table">
                 <div class="card-body booking_card">
+                <?php
+                        $year=$_GET['s_year']??date('Y');
+                        $month=$_GET['s_month']??date('m');
+                    ?>
+                    <form action="" method="get">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for=""> Year</label>
+                                    <select class="form-control" name="s_year">
+                                        <?php for($i=2022; $i <= date('Y'); $i++){ ?>
+                                        <option value="<?= $i ?>" <?= $year==$i?"selected":"" ?>><?= $i ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for=""> Month</label>
+                                    <select class="form-control" name="s_month">
+                                        <?php for($i=1; $i <= 12; $i++){ ?>
+                                        <option value="<?= $i ?>" <?= $month==$i?"selected":"" ?>><?= date('F', mktime(0, 0, 0, $i, 10)); ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group"><br>
+                                    <button class="btn btn-primary" type="submit">Get Report</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                     <div class="table-responsive">
                         <table class="datatable table table-stripped table table-hover table-center mb-0">
                             <thead>
@@ -34,7 +67,7 @@ $totalSum = 0;
                             </thead>
                             <tbody>
                                 <?php
-                                $rs = $mysqli->common_select_query("SELECT * FROM `tbl_invoice`");
+                                $rs = $mysqli->common_select_query("SELECT * FROM `tbl_invoice`  where year(created_at)=$year and month(created_at)=$month");
 
                                 if ($rs['data']) {
                                     foreach ($rs['data'] as $i => $d) {

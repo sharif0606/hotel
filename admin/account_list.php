@@ -24,7 +24,6 @@
 												<th>#SL</th>
 												<th>Head Name</th>
 												<th>Head Code</th>
-												<th>Head Type</th>
 												<th class="text-right">Actions</th>
 											</tr>
 										</thead>
@@ -39,9 +38,6 @@
 												<td><?= $d->id ?></td>
 												<td><?= $d->head_name ?></td>
 												<td><?= $d->head_code?></td>
-												<td><?= $d->head_type==1?"Expense":"income" ?></td>
-												
-												
 												<td class="text-right">
 													<a href="<?= $base_url ?>account_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
 												</td>

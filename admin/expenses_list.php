@@ -31,8 +31,7 @@
 								<?php
 									
 									$rs=$mysqli->common_select_query("SELECT tbl_journal.*,tbl_ac_head.head_name,tbl_ac_head.head_code FROM `tbl_journal` 
-									join tbl_ac_head on tbl_ac_head.id=tbl_journal.tbl_ac_head_id
-									WHERE tbl_journal.head_type=1");
+									join tbl_ac_head on tbl_ac_head.id=tbl_journal.tbl_ac_head_id");
 									if($rs['data']){
 										foreach($rs['data'] as $i=>$d){
 								?>

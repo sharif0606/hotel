@@ -15,26 +15,16 @@
 					<div class="col-lg-12">
 						<form method='post' action="">
 							<div class="row formtype">
-								<div class="col-md-4">
+								<div class="col-md-6">
 									<div class="form-group">
 										<label>Head Name</label>
 										<input class="form-control" type="text" name='head_name'> </div>
 								</div>
 								
-								<div class="col-md-4">
+								<div class="col-md-6">
 									<div class="form-group">
 										<label>Head Code</label>
 										<input type="text" class='form-control' name='head_code'>
-									</div>
-								</div>
-
-								<div class="col-md-4">
-									<div class="form-group">
-										<label>Head Type</label>
-										<select name="head_type" id="" class='form-control'>
-											<option value="1">Expense</option>
-											<option value="2">Income</option>
-										</select>
 									</div>
 								</div>
 								

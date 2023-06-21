@@ -115,6 +115,77 @@ $roomid=$_GET['roomid'];
 	</div>	
 	<!-- reservation -->
     
-     
+   <!-- test -->
+   
+<?php
+
+ 
+
+
+
+$Name = '';
+
+$LessonDate = '';
+
+$StartTime = '';
+
+$EndTime = '';
+
+if (isset($_POST['submit'])) {
+
+if(isset($_POST['firstName'])){ $Name = $_POST['firstName']; }
+
+if(isset($_POST['LessonDate'])){ $LessonDate = $_POST['LessonDate']; }
+
+if(isset($_POST['check_in'])){ $StartTime = $_POST['check_in']; }
+
+if(isset($_POST['check_out'])){ $EndTime = $_POST['check_out']; }
+
+ 
+
+ 
+
+$result = mysql_query("SELECT * FROM tbl_reservation WHERE LessonDate = '".mysql_real_escape_string($LessonDate)."' AND (StartTime >= '".mysql_real_escape_string($StartTime)."' AND StartTime <= '".mysql_real_escape_string($EndTime)."')");
+
+if(!$result)
+
+{
+
+die(mysql_error());
+
+}
+
+ 
+
+if(mysql_num_rows($result) > 0)
+
+{
+
+die('<p>This date and time have already been booked. <a href="booking1.php">Please try another time</a>.</p>');
+
+}
+
+else
+
+{
+
+//insert new user data into Users table
+
+$sql = "INSERT INTO `booking` ( `Name`, `LessonDate` , `StartTime` , `EndTime` ) VALUES( '{$Name}', '{$LessonDate}' , '{$StartTime}' , '{$EndTime}') ";
+
+mysql_query($sql) or die(mysql_error());
+
+echo "Booking Successful.<br />";
+
+echo "<a href='text.php'> Send reminder text </a>";
+
+}
+
+ 
+
+} ?>
+    
+  <!-- test -->
+
 
 <?php include('include/footer.php') ?>

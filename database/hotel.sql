@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2023 at 07:06 AM
+-- Generation Time: Jun 20, 2023 at 09:14 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -76,6 +76,13 @@ CREATE TABLE `tbl_booking` (
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tbl_booking`
+--
+
+INSERT INTO `tbl_booking` (`id`, `first_name`, `last_name`, `email`, `nationality`, `nid_no`, `contact_no`, `room_type_id`, `check_in`, `check_out`, `status`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(8, 'Burhan Uddin  ', 'Fuad', 'fuad@gmail.com', 'Bangladeshi', '963852741', 189948654, 5, '2023-06-20', '2023-06-22', 0, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -106,7 +113,8 @@ INSERT INTO `tbl_customer` (`id`, `first_name`, `last_name`, `email`, `nationali
 (2, 'maksuda', 'akter', 'maksuda@gmail.com', 'bangladeshi', '12335466877', '2147483647', '2023-06-07 09:00:06', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
 (3, 'Maksuda', 'Akter', 'maksuda@gamil.com', 'Bangladeshi', '12435365678', '2147483647', '2023-06-07 17:07:50', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
 (4, 'mahmuda', 'arobi', 'mahmuda@gmail.com', 'bangladeshi', '24354564756', '2147483647', '2023-06-11 17:30:48', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
-(5, 'fahmida', 'akter', 'fahmida@gmail.com', 'bangladeshi', '46456867908', '2147483647', '2023-06-12 08:47:01', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
+(5, 'fahmida', 'akter', 'fahmida@gmail.com', 'bangladeshi', '46456867908', '2147483647', '2023-06-12 08:47:01', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(6, 'Rabiul', 'Hossan', 'robiul@gmail.com', 'Bangladeshi', '789456123', '1677961691', '2023-06-20 05:52:15', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -137,7 +145,20 @@ INSERT INTO `tbl_gallery` (`id`, `image`, `title`, `created_at`, `created_by`, `
 (5, '16865001185921.jpg', 'Restaurant', '2023-06-11 18:15:18', 3, NULL, NULL, NULL),
 (6, '16865001564280.jpg', 'Infinity Pool', '2023-06-11 18:15:56', 3, NULL, NULL, NULL),
 (7, '16865001895591.jpg', 'Accommodation', '2023-06-11 18:16:29', 3, NULL, NULL, NULL),
-(8, '16865002189783.jpg', 'Reception', '2023-06-11 18:16:58', 3, NULL, NULL, NULL);
+(8, '16865002189783.jpg', 'Reception', '2023-06-11 18:16:58', 3, NULL, NULL, NULL),
+(9, '16872329016590.jpg', 'VIEW POINT', '2023-06-20 05:48:21', 2, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_income`
+--
+
+CREATE TABLE `tbl_income` (
+  `id` int(11) NOT NULL,
+  `inv_id` int(11) NOT NULL,
+  `amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -169,7 +190,11 @@ CREATE TABLE `tbl_invoice` (
 INSERT INTO `tbl_invoice` (`id`, `num_days`, `invoice_number`, `customer_id`, `amount`, `discount`, `vat`, `service_charge`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
 (3, 2, 'INV_3', 1, '25000.00', '5.00', '15.00', '10.00', '30000.00', '2023-06-13 09:50:03', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
 (4, 4, 'INV_4', 2, '48000.00', '5.00', '15.00', '10.00', '57600.00', '2023-06-11 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
-(5, 2, 'INV_5', 1, '25000.00', '5.00', '15.00', '10.00', '30000.00', '2023-06-11 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
+(5, 2, 'INV_5', 1, '25000.00', '5.00', '15.00', '10.00', '30000.00', '2023-06-11 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(6, 2, 'INV_6', 1, '25000.00', '15.00', '10.00', '10.00', '26250.00', '2023-06-19 08:03:20', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(7, 2, 'INV_7', 6, '40000.00', '5.00', '10.00', '5.00', '44000.00', '2023-06-20 05:53:13', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(8, 1, 'INV_8', 5, '48000.00', '15.00', '10.00', '10.00', '50400.00', '2023-06-20 07:08:43', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(9, 1, 'INV_9', 3, '48000.00', '10.00', '10.00', '10.00', '52800.00', '2023-06-20 08:34:33', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -195,7 +220,8 @@ CREATE TABLE `tbl_journal` (
 --
 
 INSERT INTO `tbl_journal` (`id`, `tbl_ac_head_id`, `trans_date`, `amount`, `head_type`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 1, '2023-06-12 00:00:00', '500', 1, NULL, NULL, NULL, NULL, NULL);
+(1, 1, '2023-06-12 00:00:00', '500', 1, NULL, NULL, NULL, NULL, NULL),
+(2, 3, '0000-00-00 00:00:00', '54000', 2, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -244,11 +270,12 @@ CREATE TABLE `tbl_reservation` (
 
 INSERT INTO `tbl_reservation` (`id`, `customer_id`, `room_id`, `check_in`, `check_out`, `status`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
 (1, 1, 1, '2023-06-06', '2023-06-08', 2, '2023-06-07 08:36:41', '', '2023-06-07 09:22:11', '1', '0000-00-00 00:00:00'),
-(2, 1, 2, '2023-06-06', '2023-06-08', 1, '2023-06-07 08:59:45', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(2, 1, 2, '2023-06-06', '2023-06-08', 2, '2023-06-07 08:59:45', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
 (3, 2, 23, '2023-06-07', '2023-06-08', 2, '2023-06-07 09:00:06', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
-(4, 3, 22, '2023-06-23', '2023-06-24', 1, '2023-06-07 17:07:50', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(4, 3, 22, '2023-06-23', '2023-06-24', 2, '2023-06-07 17:07:50', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
 (5, 4, 21, '2023-06-08', '2023-06-10', 1, '2023-06-11 17:30:48', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
-(6, 5, 21, '2023-06-09', '2023-06-10', 1, '2023-06-12 08:47:01', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
+(6, 5, 21, '2023-06-09', '2023-06-10', 2, '2023-06-12 08:47:01', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(7, 6, 8, '2023-06-21', '2023-06-23', 2, '2023-06-20 05:52:15', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -392,6 +419,12 @@ ALTER TABLE `tbl_gallery`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_income`
+--
+ALTER TABLE `tbl_income`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_invoice`
 --
 ALTER TABLE `tbl_invoice`
@@ -442,37 +475,43 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_ac_head`
 --
 ALTER TABLE `tbl_ac_head`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_booking`
 --
 ALTER TABLE `tbl_booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_gallery`
 --
 ALTER TABLE `tbl_gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `tbl_income`
+--
+ALTER TABLE `tbl_income`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_invoice`
 --
 ALTER TABLE `tbl_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_journal`
 --
 ALTER TABLE `tbl_journal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_payment`
@@ -484,7 +523,7 @@ ALTER TABLE `tbl_payment`
 -- AUTO_INCREMENT for table `tbl_reservation`
 --
 ALTER TABLE `tbl_reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_room`

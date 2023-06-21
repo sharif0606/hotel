@@ -35,7 +35,7 @@
 									<?php
 										$food=array(1=>'Free Breakfast','Free Lunch','Free Dinner','Free Breakfast & Dinner','No Free Food');
 									?>
-									<label>Food</label>
+									
 									<select class="form-control" id="food" name="food">
 										<?php
 											foreach($food as $k=>$l){
@@ -48,22 +48,36 @@
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Bed Count</label>
-								<select class="form-control" id="bed_count" name="bed_count">
+								<!-- <select class="form-control" id="bed_count" name="bed_count">
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
 									<option value="4">4</option>
-								</select>
+								</select> -->
+
+								<?php $bed = array(2=> "1","2","3","4");?>
+									<select class="form-control" name="bed_count" id="bed_count">
+										<?php
+										 	foreach($bed as $b=>$d){
+												?>
+												
+												<option value="<?= $b ?>"><?= $d?></option>
+											<?php } ?>
+									</select>
+
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Charges For cancellation</label>
-								<select class="form-control" id="cancel_charge" name="cancel_charge">
+								<!-- <select class="form-control" id="cancel_charge" name="cancel_charge">
 									<option value="0">Free</option>
 									<option value="5">5% Before 24Hours</option>
 									<option value="100">No Cancellation Allow</option>
-								</select>
+								</select> -->
+
+								<?php $charge = array(3=>"Free","5% Before 24 Hours","No Cancellation Allow")?>
+										<select  class="form-control" name="" id=""></select>
 							</div>
 						</div>
 						<div class="col-md-4">

@@ -45,13 +45,13 @@
 						<div class="col-sm-4">
 							<div class="form-group">
 								<label>Check-In</label>
-								<input name="check_in" type ="date" class="form-control" value="<?= $d->check_in; ?>">
+								<input readonly name="check_in" type ="date" class="form-control" value="<?= $d->check_in; ?>">
 							</div>
 						</div>
 						<div class="col-sm-4">
 							<div class="form-group">
 								<label>Check-Out</label>
-								<input name="check_out" type ="date" class="form-control" value="<?= $d->check_out; ?>">
+								<input readonly name="check_out" type ="date" class="form-control" value="<?= $d->check_out; ?>">
 							</div>
 						</div>
 						<div class="col-sm-4">

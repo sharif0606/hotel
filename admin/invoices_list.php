@@ -54,7 +54,7 @@
 					<td><?= $d->service_charge ?></td>
 					<td><?= $d->total ?></td>
 					<td class="text-right">
-						<a href="<?= $base_url ?>bill_create.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
+						
 						<a href="<?= $base_url ?>invoice-view.php?id=<?= $d->id ?>"><i class='fas fa-file-export'></i></a>
 
 					</td>

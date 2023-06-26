@@ -106,12 +106,13 @@ $totalInc = $totalexp= 0;
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <td class="text-right">Total Income: <?= $totalInc ?></td>
-                                    <td class="text-right">Total Expense: <?= $totalexp ?></td>
+                                    <td class="text-right font-weight-bold">Total Income: <?= $totalInc ?></td>
+                                   
+                                    <td class="text-right font-weight-bold ">Total Expense: <?= $totalexp ?></td>
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td class="text-right">Profit <?= ($totalInc - $totalexp) ?></td>
+                                    <td class="text-right font-weight-bold">Profit <?= ($totalInc - $totalexp) ?></td>
                                 </tr>
                             </tfoot>
                         </table>

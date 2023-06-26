@@ -40,9 +40,7 @@
 					<td><?= $d->head_name ?> - <?= $d->head_code ?></td>
 					<td><?= $d->trans_date ?></td>
 					<td><?= $d->amount ?></td>
-					<td class="text-right">
-						<a href="<?= $base_url ?>expenses_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
-					</td>
+					
 
 				</tr>
 				<?php }

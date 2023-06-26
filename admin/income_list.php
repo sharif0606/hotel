@@ -88,7 +88,8 @@ $totalSum = 0;
                             </tbody>
                          
                         </table>
-                        <div class="text-right mr-3">Total Sum: <?= $totalSum ?></div>
+                        <hr class="font-weight-bold">
+                        <div class="text-right ml-4 col-md-10 font-weight-bold">Total Sum: <?= $totalSum ?></div>
                     </div>
                 </div>
             </div>

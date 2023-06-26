@@ -28,7 +28,7 @@
 												<th>Nationality</th>
 												<th>NID No</th>
 												<th>Contact No</th>
-												<th class="text-right">Actions</th>
+												
 											</tr>
 										</thead>
 
@@ -47,9 +47,7 @@
 												<td><?= $d->nationality ?></td>
 												<td><?= $d->nid_no ?></td>
 												<td><?= $d->contact_no ?></td>
-												<td class="text-right">
-													<a href="<?= $base_url ?>customer_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
-												</td>
+												
 												
 										</tr>
 

@@ -26,6 +26,8 @@
 						
 						<li><a href="room_add.php"> Add Rooms </a></li>
 						<li><a href="room_list.php">All Rooms </a></li>
+						<li><a href="room_image_list.php">Rooms Type Images</a></li>
+						<li><a href="room_image_add.php">Add Rooms Type Images</a></li>
 					</ul>
 				</li>
 				

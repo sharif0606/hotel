@@ -133,7 +133,7 @@ $roomid=$_GET['roomid'];
           .done(function( json ) {
             if(!json.error){
                 if(json.data.bookroom >= json.data.total_room){
-                    $(".message").text("Sorry! no room available on this date");
+                    $(".message").text("Sorry! no room of this type is available on this date");
                 }
             }
           })

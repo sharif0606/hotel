@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2023 at 06:21 AM
+-- Generation Time: Jul 04, 2023 at 06:36 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -41,6 +41,16 @@ CREATE TABLE `tbl_ac_head` (
   `action` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tbl_ac_head`
+--
+
+INSERT INTO `tbl_ac_head` (`id`, `head_name`, `head_code`, `head_type`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `status`, `action`) VALUES
+(1, 'Cash', 101, 1, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', 0),
+(2, 'Chaque', 102, 1, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', 0),
+(3, 'Cash', 201, 2, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', 0),
+(4, 'Cheque', 202, 2, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -66,6 +76,13 @@ CREATE TABLE `tbl_booking` (
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tbl_booking`
+--
+
+INSERT INTO `tbl_booking` (`id`, `first_name`, `last_name`, `email`, `nationality`, `nid_no`, `contact_no`, `room_type_id`, `check_in`, `check_out`, `status`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(8, 'Burhan Uddin  ', 'Fuad', 'fuad@gmail.com', 'Bangladeshi', '963852741', 189948654, 5, '2023-06-20', '2023-06-22', 0, '0000-00-00 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -87,6 +104,23 @@ CREATE TABLE `tbl_customer` (
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tbl_customer`
+--
+
+INSERT INTO `tbl_customer` (`id`, `first_name`, `last_name`, `email`, `nationality`, `nid_no`, `contact_no`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'Noman', 'Hossain', 'noman@gmail.com', 'Bangladeshi', '0545452', '1689754152', '2023-06-07 08:36:41', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(2, 'maksuda', 'akter', 'maksuda@gmail.com', 'bangladeshi', '12335466877', '2147483647', '2023-06-07 09:00:06', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(3, 'Maksuda', 'Akter', 'maksuda@gamil.com', 'Bangladeshi', '12435365678', '2147483647', '2023-06-07 17:07:50', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(4, 'mahmuda', 'arobi', 'mahmuda@gmail.com', 'bangladeshi', '24354564756', '2147483647', '2023-06-11 17:30:48', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(5, 'fahmida', 'akter', 'fahmida@gmail.com', 'bangladeshi', '46456867908', '2147483647', '2023-06-12 08:47:01', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(6, 'Rabiul', 'Hossan', 'robiul@gmail.com', 'Bangladeshi', '789456123', '1677961691', '2023-06-20 05:52:15', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(7, 'maksuda', 'akter', 'kamal@yahoo.com', 'bangladeshi', '12343645756', '2147483647', '2023-06-26 08:26:16', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(8, 'sharmin ', 'akter', 'sharmin@gmail.com', 'bangladeshi', '43645786598', '658453465', '2023-06-26 08:28:10', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(9, 'jawaad', 'ahmed', 'jawaad@gmail.com', 'bangladeshi', '5746485796', '2147483647', '2023-06-26 08:29:31', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(10, 'shifa', 'alam', 'shifa@gmail.com', 'bangladeshi', '457658679', '436547568', '2023-06-26 08:30:50', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(11, 'tahmeed', 'islam', 'tahmeed@gmail.com', 'bangladeshi', '67890705436', '2147483647', '2023-06-26 08:32:20', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -102,6 +136,33 @@ CREATE TABLE `tbl_gallery` (
   `updated_at` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_gallery`
+--
+
+INSERT INTO `tbl_gallery` (`id`, `image`, `title`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, '16864999931588.jpg', 'Marco Polo Games', '2023-06-11 18:13:13', 3, NULL, NULL, NULL),
+(2, '16865000257826.jpg', 'The Beach', '2023-06-11 18:13:45', 3, NULL, NULL, NULL),
+(3, '16865000499239.jpg', 'Life Style Gym', '2023-06-11 18:14:09', 3, NULL, NULL, NULL),
+(4, '16865000804884.jpg', 'Meetings & Events', '2023-06-11 18:14:40', 3, NULL, NULL, NULL),
+(5, '16865001185921.jpg', 'Restaurant', '2023-06-11 18:15:18', 3, NULL, NULL, NULL),
+(6, '16865001564280.jpg', 'Infinity Pool', '2023-06-11 18:15:56', 3, NULL, NULL, NULL),
+(7, '16865001895591.jpg', 'Accommodation', '2023-06-11 18:16:29', 3, NULL, NULL, NULL),
+(8, '16865002189783.jpg', 'Reception', '2023-06-11 18:16:58', 3, NULL, NULL, NULL),
+(9, '16872329016590.jpg', 'VIEW POINT', '2023-06-20 05:48:21', 2, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_income`
+--
+
+CREATE TABLE `tbl_income` (
+  `id` int(11) NOT NULL,
+  `inv_id` int(11) NOT NULL,
+  `amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -127,6 +188,19 @@ CREATE TABLE `tbl_invoice` (
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tbl_invoice`
+--
+
+INSERT INTO `tbl_invoice` (`id`, `num_days`, `invoice_number`, `customer_id`, `amount`, `discount`, `vat`, `service_charge`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(3, 2, 'INV_3', 1, '25000.00', '5.00', '15.00', '10.00', '30000.00', '2023-06-13 09:50:03', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(4, 4, 'INV_4', 2, '48000.00', '5.00', '15.00', '10.00', '57600.00', '2023-06-11 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(5, 2, 'INV_5', 1, '25000.00', '5.00', '15.00', '10.00', '30000.00', '2023-06-11 00:00:00', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(6, 2, 'INV_6', 1, '25000.00', '15.00', '10.00', '10.00', '26250.00', '2023-06-19 08:03:20', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(7, 2, 'INV_7', 6, '40000.00', '5.00', '10.00', '5.00', '44000.00', '2023-06-20 05:53:13', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(8, 1, 'INV_8', 5, '48000.00', '15.00', '10.00', '10.00', '50400.00', '2023-06-20 07:08:43', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(9, 1, 'INV_9', 3, '48000.00', '10.00', '10.00', '10.00', '52800.00', '2023-06-20 08:34:33', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -138,12 +212,21 @@ CREATE TABLE `tbl_journal` (
   `tbl_ac_head_id` int(11) DEFAULT NULL,
   `trans_date` datetime DEFAULT NULL,
   `amount` decimal(10,0) DEFAULT NULL,
+  `head_type` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `created_by` varchar(255) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `updated_by` varchar(255) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_journal`
+--
+
+INSERT INTO `tbl_journal` (`id`, `tbl_ac_head_id`, `trans_date`, `amount`, `head_type`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 1, '2023-06-12 00:00:00', '500', 1, NULL, NULL, NULL, NULL, NULL),
+(2, 3, '0000-00-00 00:00:00', '54000', 2, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -186,6 +269,24 @@ CREATE TABLE `tbl_reservation` (
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tbl_reservation`
+--
+
+INSERT INTO `tbl_reservation` (`id`, `customer_id`, `room_id`, `check_in`, `check_out`, `status`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 1, 1, '2023-06-06', '2023-06-08', 2, '2023-06-07 08:36:41', '', '2023-06-07 09:22:11', '1', '0000-00-00 00:00:00'),
+(2, 1, 2, '2023-06-06', '2023-06-08', 2, '2023-06-07 08:59:45', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(3, 2, 23, '2023-06-07', '2023-06-08', 2, '2023-06-07 09:00:06', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(4, 3, 22, '2023-06-23', '2023-06-24', 2, '2023-06-07 17:07:50', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(5, 4, 21, '2023-06-08', '2023-06-10', 1, '2023-06-11 17:30:48', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(6, 5, 21, '2023-06-09', '2023-06-10', 2, '2023-06-12 08:47:01', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(7, 6, 8, '2023-06-21', '2023-06-23', 2, '2023-06-20 05:52:15', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(8, 7, 16, '2023-07-03', '2023-07-04', 1, '2023-06-26 08:26:16', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(9, 8, 17, '2023-07-03', '2023-07-04', 1, '2023-06-26 08:28:10', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(10, 9, 18, '2023-07-03', '2023-07-05', 1, '2023-06-26 08:29:31', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(11, 10, 19, '2023-07-03', '2023-07-04', 1, '2023-06-26 08:30:50', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00'),
+(12, 11, 20, '2023-07-03', '2023-07-05', 1, '2023-06-26 08:32:20', '', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -203,6 +304,37 @@ CREATE TABLE `tbl_room` (
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tbl_room`
+--
+
+INSERT INTO `tbl_room` (`id`, `room_type_id`, `room_no`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 1, '101', NULL, NULL, NULL, NULL, NULL),
+(2, 1, '102', NULL, NULL, NULL, NULL, NULL),
+(3, 1, '103', NULL, NULL, NULL, NULL, NULL),
+(4, 1, '104', NULL, NULL, NULL, NULL, NULL),
+(5, 1, '105', NULL, NULL, NULL, NULL, NULL),
+(6, 2, '201', NULL, NULL, NULL, NULL, NULL),
+(7, 2, '202', NULL, NULL, NULL, NULL, NULL),
+(8, 2, '203', NULL, NULL, NULL, NULL, NULL),
+(9, 2, '204', NULL, NULL, NULL, NULL, NULL),
+(10, 2, '205', NULL, NULL, NULL, NULL, NULL),
+(11, 3, '301', NULL, NULL, NULL, NULL, NULL),
+(12, 3, '302', NULL, NULL, NULL, NULL, NULL),
+(13, 3, '303', NULL, NULL, NULL, NULL, NULL),
+(14, 3, '304', NULL, NULL, NULL, NULL, NULL),
+(15, 3, '305', NULL, NULL, NULL, NULL, NULL),
+(16, 4, '401', NULL, NULL, NULL, NULL, NULL),
+(17, 4, '402', NULL, NULL, NULL, NULL, NULL),
+(18, 4, '403', NULL, NULL, NULL, NULL, NULL),
+(19, 4, '404', NULL, NULL, NULL, NULL, NULL),
+(20, 4, '405', NULL, NULL, NULL, NULL, NULL),
+(21, 5, '501', NULL, NULL, NULL, NULL, NULL),
+(22, 5, '502', NULL, NULL, NULL, NULL, NULL),
+(23, 5, '503', NULL, NULL, NULL, NULL, NULL),
+(24, 5, '504', NULL, NULL, NULL, NULL, NULL),
+(25, 5, '505', NULL, NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -211,14 +343,21 @@ CREATE TABLE `tbl_room` (
 
 CREATE TABLE `tbl_room_image` (
   `id` int(11) NOT NULL,
-  `room_type_id` int(11) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `deleted_at` datetime DEFAULT NULL
+  `room_type_id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `created_by` varchar(255) NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `updated_by` varchar(255) NOT NULL,
+  `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_room_image`
+--
+
+INSERT INTO `tbl_room_image` (`id`, `room_type_id`, `image`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 4, '16884452604601.jpg', '2023-07-04 06:34:20', '1', '0000-00-00 00:00:00', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -242,6 +381,17 @@ CREATE TABLE `tbl_room_type` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_room_type`
+--
+
+INSERT INTO `tbl_room_type` (`id`, `room_type`, `image`, `aircondition`, `food`, `bed_count`, `cancel_charge`, `rent`, `remarks`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
+(1, 'Super Deluxe Twin', '16860652154620.jpg', 1, 1, 2, 100, '12500.00', '475 Sft, Twin Bed, bathroom with luxury fittings, Single Room with one spacious balcony', '2023-06-06 17:26:55', 3, NULL, NULL, NULL),
+(2, 'Super Deluxe King', '16860660122346.jpg', 1, 1, 1, 100, '20000.00', '475 Sft , King Bed, bathroom with luxury fittings,  Single Room with one spacious balcony', '2023-06-06 17:40:12', 3, '2023-06-06 18:19:28', 3, NULL),
+(3, 'Infinity Sea View', '16860663919301.jpg', 1, 1, 1, 100, '25000.00', '500 Sft.  Occupancy for 2 adults,  Single Room with one spacious balcony,  Sea view King Bed, bathroom with luxury fittings', '2023-06-06 17:46:31', 3, '2023-06-06 18:17:31', 3, NULL),
+(4, 'Junior Suite', '16860666324377.jpg', 1, 1, 1, 100, '25000.00', ' 1000 Sft, Occupancy for 2 adults, One Bed Room, 1.5 Bath, Living/Dining & Kitchenette, Ocean View with two spacious balconies, King Bed, large bathroom with luxury fittings', '2023-06-06 17:49:25', 3, '2023-06-06 18:18:45', 3, NULL),
+(5, 'Panorama Ocean Suite', '16860668351820.jpg', 1, 1, 3, 100, '48000.00', '1500 Sft, Occupancy for 4 adults, Two Bed Room, 2.5 Baths, Living/Dining & Kitchenette, Full Kitchenette with wet bar, Guest Bedroom with two twin bed, Large Master Bedroom with King Size Bed, 180-degree Ocean view with two large balconies', '2023-06-06 17:53:55', 3, '2023-06-06 18:18:24', 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -303,6 +453,12 @@ ALTER TABLE `tbl_gallery`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_income`
+--
+ALTER TABLE `tbl_income`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_invoice`
 --
 ALTER TABLE `tbl_invoice`
@@ -359,37 +515,43 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_ac_head`
 --
 ALTER TABLE `tbl_ac_head`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_booking`
 --
 ALTER TABLE `tbl_booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_gallery`
 --
 ALTER TABLE `tbl_gallery`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `tbl_income`
+--
+ALTER TABLE `tbl_income`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_invoice`
 --
 ALTER TABLE `tbl_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_journal`
 --
 ALTER TABLE `tbl_journal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_payment`
@@ -401,25 +563,25 @@ ALTER TABLE `tbl_payment`
 -- AUTO_INCREMENT for table `tbl_reservation`
 --
 ALTER TABLE `tbl_reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_room`
 --
 ALTER TABLE `tbl_room`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tbl_room_image`
 --
 ALTER TABLE `tbl_room_image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_room_type`
 --
 ALTER TABLE `tbl_room_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`

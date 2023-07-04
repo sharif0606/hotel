@@ -101,7 +101,7 @@ $roomid=$_GET['roomid'];
                                                         
                                                     ?>
                                                         <a class="cwa-lightbox-image" href="<?= $base_url?>upload/room/<?= $rid->image ?>" data-desc="">
-                                                            <img src="<?= $base_url?>upload/room/<?= $rid->image ?>" width="50px" alt="" loading="lazy"/>
+                                                            <img src="<?= $base_url?>upload/room/<?= $rid->image ?>" width="150px" alt="" loading="lazy"/>
                                                         </a>
                                                     <?php } } ?>
                                                 </div>

@@ -11,7 +11,7 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<form action="" method="post">
+				<form action="" method="post" enctype='multipart/form-data'>
 					<div class="row formtype">
 						<div class="col-md-4">
 							<div class="form-group">
@@ -27,12 +27,7 @@
 								</select>
 							</div>
 						</div>
-						<div class="col-md-4">
-							<div class="form-group">
-								<label>Room No</label>
-								<input type="text" class="form-control" id="room_no" name="room_no">
-							</div>
-						</div>
+						
 						<div class="col-md-4">
 							<div class="form-group">
 								<label>Room Image</label>
@@ -52,7 +47,16 @@
 				</form>
 				<?php
 					if($_POST){
-						$rs=$mysqli->common_create('tbl_room',$_POST);
+						if($_FILES['image']['name']){
+							$imgname=time().rand(1111,9999).'.'.pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+							$rs=move_uploaded_file($_FILES['image']['tmp_name'],"../upload/room/$imgname");
+							if($rs)
+								$_POST['image']=$imgname;
+						}
+
+						$_POST['created_at']=date('Y-m-d H:i:s');
+						$_POST['created_by']=$_SESSION['userid'];
+						$rs=$mysqli->common_create('tbl_room_image',$_POST);
 						if(!$rs['error']){
 							echo "<script>window.location='room_image_list.php'</script>";
 						}else{

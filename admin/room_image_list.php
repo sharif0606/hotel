@@ -8,7 +8,8 @@
 				<div class="col">
 					<div class="mt-5">
 						<h4 class="card-title float-left mt-2">All Photos</h4> 
-						<a href="gallery_add.php" class="btn btn-primary float-right veiwbutton">Add Picture</a> </div>
+						<a href="room_image_add.php" class="btn btn-primary float-right veiwbutton">Add Picture</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -29,8 +30,24 @@
 								</thead>
 								<tbody>
 								
-									
-									
+									<?php
+										$rs=$mysqli->common_select_query("SELECT tbl_room_type.room_type,tbl_room_image.* FROM `tbl_room_image`
+										join tbl_room_type on tbl_room_type.id=tbl_room_image.room_type_id
+										WHERE tbl_room_image.deleted_at is null");
+										
+										if($rs['data']){
+											foreach($rs['data'] as $i=>$d){
+									?>
+									<tr>
+										<td><?= ++$i ?></td>
+										<td><?= $d->room_type ?></td>
+										<td><img src="<?= $base_url?>../upload/room/<?= $d->image ?>" width="100px" alt=""></td>
+										<td class="text-right">
+											<a href="<?= $base_url ?>room_image_edit.php?id=<?= $d->id ?>"><i class="fa fa-edit"></i></a>
+											<a class="text-danger" href="<?= $base_url ?>room_image_delete.php?id=<?= $d->id ?>"><i class="fa fa-trash"></i></a>
+										</td>
+									</tr>
+									<?php } } ?>
 								</tbody>
 							</table>
 						</div>
@@ -40,6 +57,5 @@
 		</div>
 	</div>
 </div>
-<tr>
 										
 <?php require_once('include/footer.php') ?>

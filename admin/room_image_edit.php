@@ -2,7 +2,7 @@
 <?php require_once('include/sidebar.php') ?>
 <?php
 	$con['id']=$_GET['id'];
-	$data=$mysqli->common_select_single('tbl_room','*',$con);
+	$data=$mysqli->common_select_single('tbl_room_image','*',$con);
 	if($data){
 		$data=$data['data'];
 	}
@@ -12,13 +12,13 @@
 		<div class="page-header">
 			<div class="row align-items-center">
 				<div class="col">
-					<h3 class="page-title mt-5">Update Room</h3>
+					<h3 class="page-title mt-5">Update Room Image</h3>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-			<form enctype="multipart/form-data" action="" method="post">
+				<form enctype="multipart/form-data" action="" method="post">
 					<div class="row formtype">
 						<div class="col-md-4">
 							<div class="form-group">
@@ -37,8 +37,10 @@
 						
 						<div class="col-md-4">
 							<div class="form-group">
-								<label>Room No</label>
-								<input value="<?= $data->room_no ?>" type="text" class="form-control" id="room_no" name="room_no">
+								<label>Room Image</label>
+								<div class="custom-file mb-3">
+									<input type="file" class="form-control" id="image" name="image">
+								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
@@ -52,10 +54,18 @@
 				</form>
 				<?php
 					if($_POST){
-						
-						$rs=$mysqli->common_update('tbl_room',$_POST,$con);
+						if($_FILES['image']['name']){
+							$imgname=time().rand(1111,9999).'.'.pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+							$rs=move_uploaded_file($_FILES['image']['tmp_name'],"../upload/room/$imgname");
+							if($rs)
+								$_POST['image']=$imgname;
+						}
+
+						$_POST['updated_at']=date('Y-m-d H:i:s');
+						$_POST['updated_by']=$_SESSION['userid'];
+						$rs=$mysqli->common_update('tbl_room_image',$_POST,$con);
 						if(!$rs['error']){
-							echo "<script>window.location='room_list.php'</script>";
+							echo "<script>window.location='room_image_list.php'</script>";
 						}else{
 							echo $rs['error'];
 						}

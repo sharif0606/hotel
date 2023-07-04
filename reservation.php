@@ -63,6 +63,7 @@ $roomid=$_GET['roomid'];
                                 </div>
                                 <div class="panel-body">
                                 <?php 
+                                    $room_image=$mysqli->common_select_query("SELECT * FROM `tbl_room_image` where room_type_id=$roomid");
                                     
                                     $rs=$mysqli->common_select_query("SELECT * FROM `tbl_room_type` where tbl_room_type.id=$roomid");
                                     if($rs['data']){
@@ -75,9 +76,10 @@ $roomid=$_GET['roomid'];
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-md-12 text-left">
-                                            <p><img style="float:left; margin-right:5px;" src="<?= $base_url?>upload/room/<?= $d->image ?>" width="50%" style="margin:auto;" alt=" " class="img-responsive" />
-                                            
-                                                <?= $d->remarks ?></p>
+                                                <p>
+                                                    <img style="float:left; margin-right:5px;" src="<?= $base_url?>upload/room/<?= $d->image ?>" width="50%" style="margin:auto;" alt=" " class="img-responsive" />
+                                                    <?= $d->remarks ?>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -90,6 +92,19 @@ $roomid=$_GET['roomid'];
                                                 <b>Air-Condition :</b> <?= $d->aircondition?"AC":"Non AC" ?> <br>
                                                 <b>Food :</b> <?= $food[$d->food] ?> <br>
                                                 <b>Bed :</b> <?= $d->bed_count ?> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div style="margin-top:5px" class="image-container">
+                                                    <?php
+                                                        if($room_image['data']){
+                                                            foreach($room_image['data'] as $rid){
+                                                        
+                                                    ?>
+                                                        <a class="cwa-lightbox-image" href="<?= $base_url?>upload/room/<?= $rid->image ?>" data-desc="">
+                                                            <img src="<?= $base_url?>upload/room/<?= $rid->image ?>" width="50px" alt="" loading="lazy"/>
+                                                        </a>
+                                                    <?php } } ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -119,6 +134,7 @@ $roomid=$_GET['roomid'];
     
    
 <?php include('include/footer.php') ?>
+<script src="<?= $base_url ?>assets/plugins/lightbox-gallery/cwa_lightbox_(jquery with css)/javascript/cwa_lightbox_bundle_v1.js" defer></script>
 
 <script>
     function chechdate(){
